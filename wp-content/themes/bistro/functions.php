@@ -40,3 +40,13 @@ function sb_add_google_fonts() {
     wp_enqueue_style( 'sb-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap', false );
 }
 add_action( 'wp_enqueue_scripts', 'sb_add_google_fonts' );
+
+// ============= hide tab detail product ================s
+function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    unset($tabs['seller']);
+    unset($tabs['more_seller_product']);
+    return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+
