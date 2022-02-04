@@ -1,0 +1,100 @@
+/* ============ primary ============== */
+
+.entry-title{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: #242424;
+    margin-bottom: 32px;
+}
+
+/* breadcrumb */
+.storefront-breadcrumb {
+    padding: 0 0;
+    margin: 35px 0 35px 0;
+}
+
+.storefront-breadcrumb .woocommerce-breadcrumb > a {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #F9A215;
+}
+
+.storefront-breadcrumb .woocommerce-breadcrumb > a:before {
+    display: none !important;
+ }
+
+.storefront-breadcrumb .woocommerce-breadcrumb {
+    padding: 0 0;
+    margin: 0 0 0 0;
+}
+
+/* =============== store =============== */
+
+.store-wrapper {
+    flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding: 0px;
+	width: 315.33px;
+	width: 315.33px;
+	height: 400px;
+    box-shadow: none !important;
+    margin-bottom: 32px;
+}
+
+.store-header{
+    height: 318px;
+}
+
+.store-header img {   
+    border-radius: 8px 8px 0px 0px;
+}
+
+.store-banner{
+    min-height: 318px;
+    max-height: 318px;
+    height: 318px;
+}
+
+.store-footer{
+    height: 82px;
+    background: rgba(0, 0, 0, 0.32) !important;
+    /* opacity: 0.7; */
+    padding-left: 26px !important;
+    padding-right: 26px !important;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.store-footer > h2 {
+    line-height: normal !important;
+}
+
+.store-footer > h2 > a {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.dokan-seller-wrap {
+    margin: 0px 0px !important;
+}
+
+/* ================ Detail Product ================== */
+
+#tab-title-description{
+    display: none;
+}
+
+#tab-description{
+    width: 100%;
+}

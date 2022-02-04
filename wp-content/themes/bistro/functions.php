@@ -31,3 +31,12 @@ require_once( 'inc/plugged.php' );
  * of this theme is performed. Instead, add your customisations to a plugin such as
  * https://github.com/woothemes/theme-customisations
  */
+
+// ============= add custom css =================
+wp_enqueue_style( 'storefront-style-custom', '/wp-content/themes/bistro/style-custom.css', $storefront_version );
+
+// =========== custom font ==================
+function sb_add_google_fonts() {
+    wp_enqueue_style( 'sb-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap', false );
+}
+add_action( 'wp_enqueue_scripts', 'sb_add_google_fonts' );
