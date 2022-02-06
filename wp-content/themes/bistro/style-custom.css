@@ -333,3 +333,42 @@ section.storefront-sticky-add-to-cart.storefront-sticky-add-to-cart--slideInDown
     font-size: 16px;
     color: #6F6F6F;
 }
+
+/* ====================== component list product ======================= */
+
+/* list on detail product */
+
+section.related.products > ul.products > li.product.type-product {
+    width: 238.67px;
+    height: 478px;
+    color: #C4C4C4;
+    margin-right: 32px;
+    border-radius: 8px;
+}
+
+section.related.products > ul.products > li.product.type-product .image-wrap {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+section.related.products > ul.products > li.product.type-product .image-wrap > img {
+    width: 238.67px !important;
+    height: 302px !important;
+    margin-bottom: 26px;
+}
+
+section.related.products > ul.products > li.product.type-product h2.woocommerce-loop-product__title {
+    margin : 0 26px 8px 26px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+section.related.products > ul.products > li.product.type-product .price {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    color: #969696;
+    margin : 0 26px 19.5px 26px;
+}
