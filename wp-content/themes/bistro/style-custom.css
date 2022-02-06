@@ -171,6 +171,10 @@
     text-decoration: none !important;
 }
 
+.woocommerce-product-gallery__image img {
+    border-radius: 8px;
+}
+
 .woocommerce-product-gallery__image--placeholder > img {
     width: 315px;
     height: 400px;
@@ -198,6 +202,11 @@
     font-weight: 500;
     font-size: 16px;
     color: #6F6F6F;
+}
+
+.woocommerce-tabs ul.tabs.wc-tabs {
+    border-top: none !important;
+    margin-bottom: 10px;
 }
 
 section.related.products h2{
@@ -245,6 +254,38 @@ section.storefront-sticky-add-to-cart.storefront-sticky-add-to-cart--slideInDown
     font-size: 14px;
     color: #F2F2F2;
     text-align: center;
+}
+
+/* add sosmed icon */
+.product.type-product .container-sosmed {
+    display: flex;
+    clear: both;   
+    margin-bottom: 32px; 
+}
+
+.product.type-product .item-sosmed {
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.product.type-product .item-sosmed.item-center {
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+}
+
+.product.type-product .img-sosmed {
+    margin : auto;
+    margin-bottom: 8px;
+}
+
+.product.type-product .text-sosmed{
+    margin : auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #F9A215;
 }
 
 /* =================== cart on detail product ==================== */

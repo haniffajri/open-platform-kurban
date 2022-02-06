@@ -50,3 +50,23 @@ function wcs_woo_remove_reviews_tab($tabs) {
 }
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
 
+// ========================= spilt quantity in chart ===========
+
+function separate_individual_cart_items( $cart_item_data, $product_id ) {
+	$unique_cart_item_key = md5( microtime() . rand() );
+	$cart_item_data['unique_key'] = $unique_cart_item_key;
+	return $cart_item_data;
+}
+add_filter( 'woocommerce_add_cart_item_data', 'separate_individual_cart_items', 10, 2 );
+
+function split_multiple_quantity_products_to_separate_cart_items( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ) {
+    if ( $quantity > 1 ) {
+        WC()->cart->set_quantity( $cart_item_key, 1 );
+        for ( $i = 1; $i <= $quantity -1; $i++ ) {
+            $cart_item_data['unique_key'] = md5( microtime() . rand() . "Hi Mom!" );
+            WC()->cart->add_to_cart( $product_id, 1, $variation_id, $variation, $cart_item_data );
+        }
+    }
+}
+add_action( 'woocommerce_add_to_cart', 'split_multiple_quantity_products_to_separate_cart_items', 10, 6 );
+
