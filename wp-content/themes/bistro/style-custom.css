@@ -46,10 +46,11 @@
 	height: 400px;
     box-shadow: none !important;
     margin-bottom: 32px;
+    position: relative;
 }
 
 .store-header{
-    height: 318px;
+    height: 400px;
 }
 
 .store-header img {   
@@ -57,18 +58,21 @@
 }
 
 .store-banner{
-    min-height: 318px;
-    max-height: 318px;
-    height: 318px;
+    min-height: 400px;
+    max-height: 400px;
+    height: 400px;
 }
 
 .store-footer{
-    height: 82px;
+    /* height: 82px; */
     background: rgba(0, 0, 0, 0.32) !important;
-    /* opacity: 0.7; */
+    width: 100%;
     padding-left: 26px !important;
     padding-right: 26px !important;
     border-radius: 0px 0px 8px 8px;
+    bottom: 0 !important;
+    position: absolute !important;
+    border-top: 0 !important;
 }
 
 .store-footer > h2 {
