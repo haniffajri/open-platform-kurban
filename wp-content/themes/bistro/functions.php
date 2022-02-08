@@ -70,3 +70,20 @@ function split_multiple_quantity_products_to_separate_cart_items( $cart_item_key
 }
 add_action( 'woocommerce_add_to_cart', 'split_multiple_quantity_products_to_separate_cart_items', 10, 6 );
 
+// ============================ store name on detail product ======================
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+function custom_single_product_summary() {
+    global $product;
+    $seller = get_post_field( 'post_author', $product->get_id());
+	$author = get_user_by( 'id', $seller );
+	$store_info = dokan_get_store_info( $author->ID );
+
+    echo '<div class="product_meta_store">
+	    <span class="posted_in">Dari: 
+            <span class="store_name_meta">'.$store_info['store_name'].'</span>
+        </span>	
+    </div>';
+}
+add_action( 'woocommerce_single_product_summary', 'custom_single_product_summary', 45);

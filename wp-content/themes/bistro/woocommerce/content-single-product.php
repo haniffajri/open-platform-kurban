@@ -63,25 +63,25 @@ if ( post_password_required() ) {
 
 	<!-- add element sosmed -->
 	<div class="container-sosmed">
-		<a href="https://www.w3schools.com" target="_blank" class="item-sosmed">
+		<a href="<?php echo 'https://twitter.com/intent/tweet?status='.$product->get_name().'+'.$product->get_permalink(); ?>" target="_blank" class="item-sosmed">
 			<?php
-				echo '<img src="'.site_url().'/wp-content/uploads/icon/Twitter.png" class="img-sosmed" />';
+				echo '<img src="'.site_url().'/wp-content/themes/bistro/assets/image/Twitter.png" class="img-sosmed" />';
 			?>
 			<p class="text-sosmed">Share di Twitter</p>
 		</a>
 
-		<a href="https://www.w3schools.com" target="_blank" class="item-sosmed item-center">
+		<a href="<?php echo 'https://www.facebook.com/sharer/sharer.php?u='.$product->get_permalink(); ?>" target="_blank" class="item-sosmed item-center">
 			<?php
-				echo '<img src="'.site_url().'/wp-content/uploads/icon/Facebook.png" class="img-sosmed" />';
+				echo '<img src="'.site_url().'/wp-content/themes/bistro/assets/image/Facebook.png" class="img-sosmed" />';
 			?>
 			<p class="text-sosmed">Share di Facebook</p>
 		</a>
 
-		<a href="https://www.w3schools.com" target="_blank" class="item-sosmed">
+		<a href="<?php echo 'https://web.whatsapp.com/send?text='.$product->get_name().' Link: '.$product->get_permalink() ?>" target="_blank" class="item-sosmed">
 			<?php
-				echo '<img src="'.site_url().'/wp-content/uploads/icon/Instagram.png" class="img-sosmed" />';
+				echo '<img src="'.site_url().'/wp-content/themes/bistro/assets/image/Whatsapp.png" class="img-sosmed" />';
 			?>
-			<p class="text-sosmed">Share di Instagram</p>
+			<p class="text-sosmed">Share di Whatsapp</p>
 		</a>
 	</div>
 

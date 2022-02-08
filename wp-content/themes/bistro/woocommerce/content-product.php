@@ -70,7 +70,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	echo '<div style="display: flex; justify-content: flex-end ; padding-right: 26px; padding-bottom: 25px;"> 
 			<a href="' . $link. '">
-				<img src="'.site_url().'/wp-content/uploads/icon/add-to-cart.png" width="24" height="24">
+				<img src="'.site_url().'/wp-content/themes/bistro/assets/image/add-to-cart.png" width="24" height="24">
 			</a>
 		</div>';
 
