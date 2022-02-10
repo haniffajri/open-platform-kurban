@@ -45,11 +45,11 @@ if ( ! wp_doing_ajax() ) {
 		</noscript>
 
 		<div style="display: flex;">	
-  			<input style="margin-top: 5px;" type="checkbox" id="id-term-condition-custom" name="term-condition-custom" value="true">
+  			<input style="margin-top: 5px;" onclick="onClickTermConditinStatus();" type="checkbox" id="id-term-condition-custom" name="term-condition-custom" value="true">
 			<label> Saya menyetujui </label> <a style="margin-left: 5px; cursor: pointer; color: #242424; text-decoration: underline;" >Syarat dan Ketentuan Kurban</a>
 		</div>
 
-		<button class="button alt" name="woocommerce_checkout_place_order" id="place_order_custom" value="Kurban sekarang" data-value="Kurban sekarang">Kurban Sekarang</button>
+		<button class="button alt" name="woocommerce_checkout_place_order_custom" id="place_order_custom" value="Kurban sekarang" data-value="Kurban sekarang">Kurban Sekarang</button>
 
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 

@@ -35,6 +35,10 @@ require_once( 'inc/plugged.php' );
 // ============= add custom css =================
 wp_enqueue_style( 'storefront-style-custom', '/wp-content/themes/bistro/style-custom.css', $storefront_version );
 
+// ============= add js css =================
+wp_enqueue_script( 'storefront-js-custom', '/wp-content/themes/bistro/js-custom.js', $storefront_version );
+
+
 // =========== custom font ==================
 function add_google_fonts() {
     wp_enqueue_style( 'sb-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap', false );
@@ -60,7 +64,8 @@ function separate_individual_cart_items( $cart_item_data, $product_id ) {
 add_filter( 'woocommerce_add_cart_item_data', 'separate_individual_cart_items', 10, 2 );
 
 function split_multiple_quantity_products_to_separate_cart_items( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ) {
-    if ( $quantity > 1 ) {
+    if ( $quantity > 1 ) {add_filter('woocommerce_checkout_fields', 'njengah_override_checkout_fields');
+ 
         WC()->cart->set_quantity( $cart_item_key, 1 );
         for ( $i = 1; $i <= $quantity -1; $i++ ) {
             $cart_item_data['unique_key'] = md5( microtime() . rand() . "Hi Mom!" );
@@ -103,6 +108,18 @@ function remove_checkout_fields( $fields ) {
     unset($fields['order']['order_comments']);
     return $fields; 
 }
+
+function override_checkout_fields($fields) {
+    $fields['billing']['billing_first_name']['placeholder'] = 'Nama Depan';
+    $fields['billing']['billing_last_name']['placeholder'] = 'Nama Belakang';
+    $fields['billing']['billing_email']['placeholder'] = 'emailku@domain.com ';
+    $fields['billing']['billing_phone']['placeholder'] = 'Nomor WhatsApp 08xxx ';
+     
+    return $fields;
+     
+}
+add_filter('woocommerce_checkout_fields', 'override_checkout_fields');
+     
 
 // ================== choose radio button before checkout ==========================
 
@@ -218,9 +235,7 @@ function dokan_product_seller_info_item( $item_data, $cart_item ) {
 
     return $item_data;
 }
-
 add_filter( 'dokan_product_seller_info', 'dokan_product_seller_info_item', 10, 2 );
-
 
 function name_of_person_qurban_order_meta_handler( $item_id, $values, $cart_item_key ) {
     if( isset( $values['name_of_person_qurban'] ) ) {
@@ -228,5 +243,10 @@ function name_of_person_qurban_order_meta_handler( $item_id, $values, $cart_item
     }
 }
 add_action( 'woocommerce_add_order_item_meta', 'name_of_person_qurban_order_meta_handler', 1, 3 );
+
+function change_checkout_button_text( $button_text ) {
+   return 'Kurban Sekarang';
+}
+add_filter( 'woocommerce_order_button_text', 'change_checkout_button_text' );
 
 // ================================================
