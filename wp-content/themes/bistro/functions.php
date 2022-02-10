@@ -36,19 +36,19 @@ require_once( 'inc/plugged.php' );
 wp_enqueue_style( 'storefront-style-custom', '/wp-content/themes/bistro/style-custom.css', $storefront_version );
 
 // =========== custom font ==================
-function sb_add_google_fonts() {
+function add_google_fonts() {
     wp_enqueue_style( 'sb-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap', false );
 }
-add_action( 'wp_enqueue_scripts', 'sb_add_google_fonts' );
+add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 // ============= hide tab detail product ================s
-function wcs_woo_remove_reviews_tab($tabs) {
+function woo_remove_reviews_tab($tabs) {
     unset($tabs['reviews']);
     unset($tabs['seller']);
     unset($tabs['more_seller_product']);
     return $tabs;
 }
-add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+add_filter( 'woocommerce_product_tabs', 'woo_remove_reviews_tab', 98 );
 
 // ========================= spilt quantity in chart ===========
 
@@ -87,3 +87,146 @@ function custom_single_product_summary() {
     </div>';
 }
 add_action( 'woocommerce_single_product_summary', 'custom_single_product_summary', 45);
+
+// ========================= checkout ======================================
+
+add_filter( 'woocommerce_checkout_fields' , 'remove_checkout_fields' ); 
+
+function remove_checkout_fields( $fields ) { 
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_1']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_city']);
+    unset($fields['billing']['billing_postcode']);
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['order']['order_comments']);
+    return $fields; 
+}
+
+// ================== choose radio button before checkout ==========================
+
+function new_payment_field( $checkout ) {
+    woocommerce_form_field( 'payment_method_data', array(
+	'type' => 'radio',
+   	'class' => array('form-row-wide', 'update_totals_on_change' ),
+   	'options' => array('1' => 'BCA','2' => 'Mandiri',),
+   	'label'  => __("Pilih salah satu metode pembayaran"),
+	'required'=>true,
+    ), $checkout->get_value('payment_method_data', 10, 4));
+}
+add_action( 'woocommerce_after_order_notes', 'new_payment_field' );
+
+function filter_woocommerce_form_field_radio( $field, $key, $args, $value ) {
+    // Based on key
+    if ( $key == 'payment_method_data' ) {
+        if ( ! empty( $args['options'] ) ) {
+            $field = '<div class="payment-list-custom"><ul>';
+            foreach ( $args['options'] as $option_key => $option_text ) {
+                $field .= '<li>';
+                $field .= '<input type="radio" value="' . esc_attr( $option_key ) . '" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '_' . esc_attr( $option_key ) . '" />';
+                $field .= '<label>' . esc_html( $option_text ) . '</label>';
+                $field .= '</li>';
+            }
+            $field .= '</ul></div>';
+        }
+    }
+    return $field;
+}
+add_filter( 'woocommerce_form_field_radio', 'filter_woocommerce_form_field_radio', 10, 4 );
+
+function custom_field_validate() {
+   if (!$_POST['payment_method_data']) { 
+	wc_add_notice(__('Anda memilih metode pembayaran') , 'error'); 
+   }
+}
+add_action('woocommerce_after_checkout_validation', 'custom_field_validate');
+
+function save_payment_method_data( $order_id ) {
+    if ( !empty( $_POST['payment_method_data'] ) ) {
+        update_post_meta( $order_id, 'Payment Method', $_POST['payment_method_data']);
+    }
+}
+add_action( 'woocommerce_checkout_update_order_meta', 'save_payment_method_data' );
+
+function display_payment_method($order){
+   echo'<p>'.__('Payment Method').': ';
+   $allergic = get_post_meta( $order->ID, 'Payment Method', true );
+   if ($allergic==1) { echo "BCA";} else {echo "Mandiri";}
+   echo '</p>';
+}
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'display_payment_method', 10, 1 );
+
+// ==================== show name qurban ===============
+
+// function add_name_of_person_qurban_field() {
+//     echo '<table class="variations" cellspacing="0">
+//           <tbody>
+//               <tr>
+//               <td class="label"><label for="color">Nama Penqurban</label></td>
+//               <td class="value">
+//                   <input type="text" name="name-of-person-qurban" value="" />                      
+//               </td>
+//           </tr>                               
+//           </tbody>
+//       </table>';
+// }
+// add_action( 'woocommerce_before_add_to_cart_button', 'add_name_of_person_qurban_field' );
+
+// function name_of_person_qurban_validation() { 
+//     if ( empty( $_REQUEST['name-of-person-qurban'] ) ) {
+//         wc_add_notice( __( 'Anda belum mengisi nama penqurban', 'woocommerce' ), 'error' );
+//         return false;
+//     }
+//     return true;
+// }
+// add_action( 'woocommerce_add_to_cart_validation', 'name_of_person_qurban_validation', 10, 3 );
+
+// function save_name_of_person_qurban_field( $cart_item_data, $product_id ) {
+//     if( isset( $_REQUEST['name-of-person-qurban'] ) ) {
+//         $cart_item_data[ 'name_of_person_qurban' ] = $_REQUEST['name-of-person-qurban'];
+//         /* below statement make sure every add to cart action as unique line item */
+//         $cart_item_data['unique_key'] = md5( microtime().rand() );
+//     }
+//     return $cart_item_data;
+// }
+// add_action( 'woocommerce_add_cart_item_data', 'save_name_of_person_qurban_field', 10, 2 );
+
+function render_meta_on_cart_and_checkout( $cart_data, $cart_item = null ) {
+    $custom_items = array();
+    if( !empty( $cart_data ) ) {
+        $custom_items = $cart_data;
+    }
+    if( isset( $cart_item['name_of_person_qurban'] ) ) {
+        $custom_items[] = array( "name" => 'Kurban atas nama', "value" => $cart_item['name_of_person_qurban'] );
+    }
+    return $custom_items;
+}
+add_filter( 'woocommerce_get_item_data', 'render_meta_on_cart_and_checkout', 10, 2 );
+
+function dokan_product_seller_info_item( $item_data, $cart_item ) {
+    $vendor = dokan_get_vendor_by_product( $cart_item['product_id'] );
+
+    if ( ! $vendor || ! $vendor->get_id() ) {
+        return $item_data;
+    }
+
+    $item_data[] = array(
+        'name'  => __( 'Vendor', 'dokan-lite' ),
+        'value' => $vendor['name_of_person_qurban'],
+    );
+
+    return $item_data;
+}
+
+add_filter( 'dokan_product_seller_info', 'dokan_product_seller_info_item', 10, 2 );
+
+
+function name_of_person_qurban_order_meta_handler( $item_id, $values, $cart_item_key ) {
+    if( isset( $values['name_of_person_qurban'] ) ) {
+        wc_add_order_item_meta( $item_id, "name_of_person_qurban", $values['name_of_person_qurban'] );
+    }
+}
+add_action( 'woocommerce_add_order_item_meta', 'name_of_person_qurban_order_meta_handler', 1, 3 );
+
+// ================================================

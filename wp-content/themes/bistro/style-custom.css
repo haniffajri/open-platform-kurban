@@ -512,3 +512,165 @@ section.related.products > ul.products > li.product.type-product .price {
     margin : 0 26px 19.5px 26px;
 }
 
+/* ==================== checkout ====================== */
+
+.woocommerce-form-coupon-toggle .woocommerce-info {
+    background: #5EAFCC;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 0;
+    margin-bottom: 32px;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info:before {
+    display: none;
+}
+
+form.checkout.woocommerce-checkout {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    color: #242424;  
+}
+
+form.checkout.woocommerce-checkout h3{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    color: #242424;  
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 32px !important;
+}
+
+form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input {
+    background: #FFFFFF;
+    border: 1px solid #B6B6B6;
+    padding: 12px 16px;
+    border-radius: 8px;
+    height: 45px;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item {
+    padding : 16px 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-image > img {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-name {
+    width:35%;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-name p.title-custom {
+    font-weight: 600;
+    font-size: 16px;
+    color: #F9A215;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-name p {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #6F6F6F;
+    margin-bottom: 4px;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-detail .variation-Vendor {
+    display: none;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-detail .variation-Kurbanatasnama {
+    font-weight: 500;
+    font-size: 12px;
+    color: #6F6F6F;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-detail .variation-Kurbanatasnama p {
+    font-size: 14px;
+    color: #242424;
+}
+
+#order_review_heading {
+    margin-bottom: 0 !important;
+    padding-bottom: 6px !important;
+}
+
+.woocommerce-checkout-review-order .order-total-custom {
+    font-weight: 600;
+    font-size: 16px;
+    color: #242424;
+    background: #E0E0E0;
+    padding: 15.5px 12px;
+    border-radius: 8px;
+    margin: 32px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.woocommerce-checkout-review-order .order-total-custom .order-title-custom{
+    font-weight: 500;
+    color: #6F6F6F;
+}
+
+.woocommerce-checkout-payment{
+    border-radius: 8px;
+}
+
+.woocommerce-checkout-payment .payment_box.payment_method_bacs > p {
+    font-size: 14px;
+}
+
+#payment .payment_methods li:last-child:not(.woocommerce-notice) {
+    border-radius: 8px !important;
+    background: #E0E0E0;
+}
+
+#payment .payment_methods > li .payment_box, #payment .place-order {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.woocommerce-checkout-payment .form-row.place-order {
+    margin-top: 35px !important;
+    font-size: 14px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    background: none !important;
+}
+
+.woocommerce-billing-fields .form-row.form-row-first, .woocommerce-billing-fields .form-row.form-row-last {
+    width: 100% !important;
+}
+
+.woocommerce-additional-fields .form-row {
+    font-size: 14px;
+}
+
+.woocommerce-additional-fields .payment-list-custom {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.woocommerce-additional-fields .payment-list-custom ul {
+    list-style-type: none;
+    margin-left: 0 !important;
+}
+
+.woocommerce-additional-fields .payment-list-custom ul > li {
+    margin-bottom: 18.5px;
+}
