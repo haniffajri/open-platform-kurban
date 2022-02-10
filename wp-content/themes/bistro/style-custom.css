@@ -514,12 +514,25 @@ section.related.products > ul.products > li.product.type-product .price {
 
 /* ==================== checkout ====================== */
 
-.woocommerce-form-coupon-toggle .woocommerce-info {
+.woocommerce-form-coupon-toggle .woocommerce-info.woocommerce-info-custom {
     background: #5EAFCC;
     border-radius: 8px;
-    padding: 16px;
+    padding: 18px;
     border-left: 0;
     margin-bottom: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    align-items: center;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info.woocommerce-info-custom {
+    display: flex;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info.woocommerce-info-custom img {
+    margin-right: 18px;
 }
 
 .woocommerce-form-coupon-toggle .woocommerce-info:before {
