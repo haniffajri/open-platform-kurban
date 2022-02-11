@@ -10,6 +10,70 @@
     margin-bottom: 32px;
 }
 
+.woocommerce {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #242424;
+
+}
+
+.woocommerce h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: #242424;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    margin-bottom: 32px;
+}
+
+.woocommerce-form-row.form-row label {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #242424;
+}
+
+.woocommerce-form-row.form-row label {
+    margin-bottom: 4px;
+}
+
+.woocommerce-form-row.form-row input {
+    background: #FFFFFF;
+    border: 1px solid #B6B6B6;
+    border-radius: 8px;
+}
+
+.woocommerce-form-row.form-row button {
+    background: linear-gradient(99.96deg, #FF8514 6.49%, #F9A215 92.13%);
+    box-shadow: 0px 6px 16px rgba(255, 133, 20, 0.16);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #F2F2F2; 
+    padding: 10px 16px;
+}
+
+.woocommerce-form-login .form-row .woocommerce-button.button.woocommerce-form-login__submit {
+    background: linear-gradient(99.96deg, #FF8514 6.49%, #F9A215 92.13%);
+    box-shadow: 0px 6px 16px rgba(255, 133, 20, 0.16);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #F2F2F2; 
+    padding: 10px 16px;
+    margin-top: 16px;
+}
+
 /* breadcrumb */
 .storefront-breadcrumb {
     padding: 0 0;
