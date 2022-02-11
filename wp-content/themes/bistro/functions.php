@@ -249,4 +249,10 @@ function change_checkout_button_text( $button_text ) {
 }
 add_filter( 'woocommerce_order_button_text', 'change_checkout_button_text' );
 
+// ============= romove search header ===================
+function remove_storefront_header_search() {
+    remove_action( 'storefront_header', 'storefront_product_search', 40 );
+}
+add_action( 'init', 'remove_storefront_header_search' );
+
 // ================================================
