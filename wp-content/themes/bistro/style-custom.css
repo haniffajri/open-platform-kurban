@@ -925,3 +925,113 @@ form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper in
         margin: auto !important;
     }
 }
+
+/* ========================== footer =========================== */
+
+.site-footer {
+    padding-top: 56px !important;
+    padding-bottom: 32px !important;
+} 
+
+.site-footer .col-full {
+    padding: 0;
+    max-width: 1074px !important;
+    margin: auto;
+}
+
+.site-footer, .site-footer h2, .site-footer a {
+    background-color: #D68605 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF !important;
+}
+
+.site-footer .footer-top-custom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.site-footer .img-footer {
+    height: 62px;
+    width: 375px;
+}
+
+.site-footer .sosmed-footer-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.site-footer .sosmed-footer-logo {
+    display: flex;
+}
+
+.site-footer h2 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer .footer-content-wrap ul {
+    margin: 0;
+}
+
+.site-footer .footer-content-wrap ul li {
+    list-style-type: none; 
+    margin-bottom: 8px;
+}
+
+.site-footer .footer-content-wrap ul li a {
+    text-decoration: none;
+}
+
+.site-footer .img-sosmed-footer {
+    height: 32px;
+    width: 32px;
+    margin-right: 16px;
+}
+
+.site-footer .footer-content-custom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+}
+
+.site-footer .footer-end-custom {
+    border-top: 1px solid #F2F2F2;
+    font-size: 12px;
+    padding-top: 16px;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .site-footer .col-full { 
+        margin: 0 14px;
+    }
+
+    .site-footer .footer-top-custom {
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .site-footer .sosmed-footer-title {
+        margin-top: 8px;
+    }
+
+    .site-footer .footer-content-custom {
+        display: block;
+        margin-bottom: 56px;
+    }
+
+    .site-footer .footer-content-custom .footer-content-wrap {
+        margin-bottom: 32px;
+    }
+}
