@@ -913,3 +913,15 @@ form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper in
 .elementor-page #masthead.site-header {
     margin-bottom: 0px;
 }
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .elementor-shortcode li.product.type-product { 
+        margin: auto !important;
+        margin-bottom: 25px !important;
+    }
+
+    .elementor-shortcode li.dokan-single-seller > .store-wrapper {
+        margin: auto !important;
+    }
+}
