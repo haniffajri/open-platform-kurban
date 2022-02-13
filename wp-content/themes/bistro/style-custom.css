@@ -10,10 +10,102 @@
     margin-bottom: 32px;
 }
 
+.woocommerce {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: #242424;
+}
+
+.woocommerce p {
+    font-size: 14px;
+}
+
+.woocommerce h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: #242424;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    margin-bottom: 32px;
+}
+
+.woocommerce-form-row.form-row label {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #242424;
+}
+
+.woocommerce-form-row.form-row label {
+    margin-bottom: 4px;
+}
+
+.woocommerce-form-row.form-row input {
+    background: #FFFFFF;
+    border: 1px solid #B6B6B6;
+    border-radius: 8px;
+}
+
+.woocommerce-form-row.form-row button {
+    background: linear-gradient(99.96deg, #FF8514 6.49%, #F9A215 92.13%);
+    box-shadow: 0px 6px 16px rgba(255, 133, 20, 0.16);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #F2F2F2; 
+    padding: 10px 16px;
+}
+
+.woocommerce-form-login .form-row .woocommerce-button.button.woocommerce-form-login__submit {
+    background: linear-gradient(99.96deg, #FF8514 6.49%, #F9A215 92.13%);
+    box-shadow: 0px 6px 16px rgba(255, 133, 20, 0.16);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #F2F2F2; 
+    padding: 10px 16px;
+    margin-top: 16px;
+}
+
 /* breadcrumb */
+.woocommerce-breadcrumb-custom { 
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #6F6F6F;
+    align-items: center;
+}
+
+.woocommerce-breadcrumb-custom span {
+    margin: 0 8.72px !important;
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(49, 53, 59, 0.75);
+}
+
+.woocommerce-breadcrumb-custom :nth-child(3) {
+    pointer-events:none !important;
+    color: rgba(49, 53, 59, 0.75);
+}
+
+.woocommerce-breadcrumb-custom a {
+    color: #F9A215 ;
+}
+
 .storefront-breadcrumb {
-    padding: 0 0;
-    margin: 35px 0 35px 0;
+    padding: 0 0 !important;
+    margin: 35px 0 35px 0 !important;
 }
 
 .storefront-breadcrumb .woocommerce-breadcrumb > a {
@@ -32,6 +124,47 @@
 .storefront-breadcrumb .woocommerce-breadcrumb {
     padding: 0 0;
     margin: 0 0 0 0;
+}
+
+/* header */
+
+#masthead.site-header {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #6F6F6F;
+    border-top: 0;
+}
+
+@media (min-width: 768px) {
+    #masthead.site-header .col-full {
+        margin: 0 0 0 146px;
+        padding: 0;
+        max-width: 1050px;
+    }
+
+    #masthead.site-header {
+        text-align: right;
+    }
+
+    .primary-navigation #menu-menu.menu.nav-menu {
+        width: 840px;
+    }
+
+    .primary-navigation #menu-menu.menu.nav-menu li {
+        margin-right: 0 !important;
+    }
+}
+
+#masthead.site-header a {
+    margin-right: 20px;
+}
+
+#masthead.site-header .site-branding > a {
+    width: 200px;
+    margin-top: 4px;
 }
 
 /* =============== store =============== */
@@ -54,7 +187,11 @@
 }
 
 .store-header img {   
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0px 0px !important;
+}
+
+.elementor-shortcode .store-header img {   
+    border-radius: 8px !important;
 }
 
 .store-banner{
@@ -69,7 +206,7 @@
     width: 100%;
     padding-left: 26px !important;
     padding-right: 26px !important;
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 0px 0px 8px 8px !important;
     bottom: 0 !important;
     position: absolute !important;
     border-top: 0 !important;
@@ -77,6 +214,7 @@
 
 .store-footer > h2 {
     line-height: normal !important;
+    margin-bottom: 2px;
 }
 
 .store-footer > h2 > a {
@@ -175,17 +313,18 @@
     color: #F2F2F2;
 }
 
-.summary.entry-summary .product_meta {
-    padding-top: 32px !important;
+.summary.entry-summary .product_meta_store {
+    padding-top: 22px;
+    border-top: 1px solid #E0E0E0;
 }
 
-.summary.entry-summary .product_meta > span {
+.summary.entry-summary .product_meta_store > span {
     font-weight: 500;
     font-size: 12px;
     color: #6F6F6F;
 }
 
-.summary.entry-summary .product_meta > span > a{
+.summary.entry-summary .product_meta_store > span > .store_name_meta{
     font-weight: 600;
     color: #242424;
     text-decoration: none !important;
@@ -511,3 +650,388 @@ section.related.products > ul.products > li.product.type-product .price {
     margin : 0 26px 19.5px 26px;
 }
 
+/* ==================== checkout ====================== */
+
+.woocommerce-form-coupon-toggle .woocommerce-info.woocommerce-info-custom {
+    background: #5EAFCC;
+    border-radius: 8px;
+    padding: 18px;
+    border-left: 0;
+    margin-bottom: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    align-items: center;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info.woocommerce-info-custom {
+    display: flex;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info.woocommerce-info-custom img {
+    margin-right: 18px;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info:before {
+    display: none;
+}
+
+form.checkout.woocommerce-checkout {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    color: #242424;  
+}
+
+form.checkout.woocommerce-checkout h3{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    color: #242424;  
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 32px !important;
+}
+
+form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper label {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper input {
+    background: #FFFFFF;
+    border: 1px solid #B6B6B6;
+    padding: 12px 16px;
+    border-radius: 8px;
+    height: 45px;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item {
+    padding : 16px 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-image > img {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-name {
+    width:35%;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-name p.title-custom {
+    font-weight: 600;
+    font-size: 16px;
+    color: #F9A215;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-name p {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #6F6F6F;
+    margin-bottom: 4px;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-detail .variation-Vendor {
+    display: none;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-detail .variation-Kurbanatasnama {
+    font-weight: 500;
+    font-size: 12px;
+    color: #6F6F6F;
+}
+
+.woocommerce-checkout-review-order-custom .cart_item > .product-detail .variation-Kurbanatasnama p {
+    font-size: 14px;
+    color: #242424;
+}
+
+#order_review_heading {
+    margin-bottom: 0 !important;
+    padding-bottom: 6px !important;
+}
+
+.woocommerce-checkout-review-order .order-total-custom {
+    font-weight: 600;
+    font-size: 16px;
+    color: #242424;
+    background: #E0E0E0;
+    padding: 15.5px 12px;
+    border-radius: 8px;
+    margin: 32px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.woocommerce-checkout-review-order .order-total-custom .order-title-custom{
+    font-weight: 500;
+    color: #6F6F6F;
+}
+
+.woocommerce-checkout-payment{
+    border-radius: 8px;
+}
+
+.woocommerce-checkout-payment .payment_box.payment_method_bacs > p {
+    font-size: 14px;
+}
+
+#payment .payment_methods li:last-child:not(.woocommerce-notice) {
+    border-radius: 8px !important;
+    background: #E0E0E0;
+}
+
+#payment .payment_methods > li .payment_box, #payment .place-order {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.woocommerce-checkout-payment .form-row.place-order {
+    margin-top: 35px !important;
+    font-size: 14px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    background: none !important;
+}
+
+.woocommerce-billing-fields .form-row.form-row-first, .woocommerce-billing-fields .form-row.form-row-last {
+    width: 100% !important;
+}
+
+.woocommerce-additional-fields .form-row {
+    font-size: 14px;
+}
+
+.woocommerce-additional-fields .payment-list-custom {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.woocommerce-additional-fields .payment-list-custom ul {
+    list-style-type: none;
+    margin-left: 0 !important;
+}
+
+.woocommerce-additional-fields .payment-list-custom ul > li {
+    margin-bottom: 18.5px;
+}
+
+.woocommerce-checkout-review-order .form-row.place-order #place_order, .woocommerce-checkout-review-order .form-row.place-order #place_order_custom {
+    padding: 14px 24px;
+    background: linear-gradient(99.96deg, #FF8514 6.49%, #F9A215 92.13%);
+    box-shadow: 0px 6px 16px rgba(255, 133, 20, 0.16);
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    font-size: 16px;
+    color: #F2F2F2;
+    margin-top: 17.5px;
+    cursor: pointer;
+    display: none;
+}
+
+.woocommerce-checkout-review-order .form-row.place-order #place_order_custom {
+    background: #E0E0E0;
+    color: #242424;
+}
+
+.woocommerce-checkout-review-order .form-row.place-order #place_order_custom {
+    pointer-events:none !important;
+    cursor: not-allowed !important;
+    display: block;
+}
+
+/* ===================== Home ========================= */
+
+.elementor-shortcode li.product.type-product {
+    width: 315.33px;
+    height: 546px;
+    border-radius: 8px !important;
+}
+
+.elementor-shortcode  li.product.type-product section.image-wrap {
+    margin-bottom: 26px;
+}
+
+.elementor-shortcode li.product.type-product section.image-wrap img {
+    width: 100%;
+    height: 400px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.elementor-shortcode li.product.type-product h2.woocommerce-loop-product__title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    color: #242424;
+    margin: 0 26px 8px 26px;
+}
+
+.elementor-shortcode li.product.type-product {
+    margin-bottom: 0px;
+}
+
+.elementor-shortcode li.product.type-product span.price {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    color: #969696;
+    margin : 0 26px 19.5px 26px;
+}
+
+.elementor-page .storefront-breadcrumb {
+    display: none;
+}
+
+.elementor-page header.entry-header {
+    display: none;
+}
+
+.elementor-page h1, .elementor-page h4, .elementor-page h2 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: normal !important;
+    letter-spacing: 0.01em !important;
+}
+
+.elementor-page #masthead.site-header {
+    margin-bottom: 0px;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .elementor-shortcode li.product.type-product { 
+        margin: auto !important;
+        margin-bottom: 25px !important;
+    }
+
+    .elementor-shortcode li.dokan-single-seller > .store-wrapper {
+        margin: auto !important;
+    }
+}
+
+/* ========================== footer =========================== */
+
+.site-footer {
+    padding-top: 56px !important;
+    padding-bottom: 32px !important;
+} 
+
+.site-footer .col-full {
+    padding: 0;
+    max-width: 1074px !important;
+    margin: auto;
+}
+
+.site-footer, .site-footer h2, .site-footer a {
+    background-color: #D68605 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF !important;
+}
+
+.site-footer .footer-top-custom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.site-footer .img-footer {
+    height: 62px;
+    width: 375px;
+}
+
+.site-footer .sosmed-footer-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.site-footer .sosmed-footer-logo {
+    display: flex;
+}
+
+.site-footer h2 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer .footer-content-wrap ul {
+    margin: 0;
+}
+
+.site-footer .footer-content-wrap ul li {
+    list-style-type: none; 
+    margin-bottom: 8px;
+}
+
+.site-footer .footer-content-wrap ul li a {
+    text-decoration: none;
+}
+
+.site-footer .img-sosmed-footer {
+    height: 32px;
+    width: 32px;
+    margin-right: 16px;
+}
+
+.site-footer .footer-content-custom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+}
+
+.site-footer .footer-end-custom {
+    border-top: 1px solid #F2F2F2;
+    font-size: 12px;
+    padding-top: 16px;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .site-footer .col-full { 
+        margin: 0 14px;
+    }
+
+    .site-footer .footer-top-custom {
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .site-footer .sosmed-footer-title {
+        margin-top: 8px;
+    }
+
+    .site-footer .footer-content-custom {
+        display: block;
+        margin-bottom: 56px;
+    }
+
+    .site-footer .footer-content-custom .footer-content-wrap {
+        margin-bottom: 32px;
+    }
+}
