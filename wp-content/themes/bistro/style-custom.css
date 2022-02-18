@@ -1036,6 +1036,73 @@ form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper in
     }
 }
 
+/* =================== order received ====================== */
+
+.woocommerce-order > p.woocommerce-thankyou-order-received  {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.woocommerce-order h2 .woocommerce-notice-custom {
+    font-size: 25px;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details  {
+    margin: 32px 0;
+    background: #F2EDE7;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details:before  {
+    display: none;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details::after {
+    display: none;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details > li {
+    padding: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #242424;
+    text-transform: capitalize;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details > li strong {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details > li {
+    padding: 16px;
+}
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li div {
+    width: 50%;
+} 
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li div p {
+    margin-bottom: 4px;
+} 
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li div p.order_detail_title_custom {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li.woocommerce-notice-title-custom {
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 28.5px;
+    padding-bottom: 28.5px;
+}
+
 /* CUSTOM */
 input[type=text].wp-qurban-input,
 input[type=text]:focus.wp-qurban-input {
@@ -1049,3 +1116,4 @@ input[type=text]:focus.wp-qurban-input {
   font-weight: 500;
   font-size: 14px;
 }
+
