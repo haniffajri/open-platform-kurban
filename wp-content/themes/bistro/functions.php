@@ -255,4 +255,18 @@ function remove_storefront_header_search() {
 }
 add_action( 'init', 'remove_storefront_header_search' );
 
+// ================= clikck add to cart direct halaman cart ===================
+add_filter ('woocommerce_add_to_cart_redirect', function( $url, $adding_to_cart ) {
+    return wc_get_cart_url();
+}, 10, 2 ); 
+
+
+// ===================== remove downloads and addresses on my account =====================
+function misha_remove_my_account_links( $menu_links ){
+	unset( $menu_links['edit-address'] );
+	unset( $menu_links['downloads'] );
+	return $menu_links;
+}
+add_filter ( 'woocommerce_account_menu_items', 'misha_remove_my_account_links' );
+
 // ================================================
