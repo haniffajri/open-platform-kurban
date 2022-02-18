@@ -299,7 +299,7 @@
 }
 
 .summary.entry-summary > form.cart > .single_add_to_cart_button {
-    width: 193px;
+    /* width: 193px; */
     height: 45px;
     background: linear-gradient(92.07deg, #F96BA0 0%, #E63577 99.85%);
     box-shadow: 0px 6px 16px rgba(229, 53, 119, 0.16);
@@ -311,6 +311,7 @@
     font-weight: 600;
     font-size: 14px;
     color: #F2F2F2;
+    padding: 12px 16px;
 }
 
 .summary.entry-summary .product_meta_store {
@@ -404,7 +405,7 @@ section.storefront-sticky-add-to-cart.storefront-sticky-add-to-cart--slideInDown
 }
 
 section.storefront-sticky-add-to-cart.storefront-sticky-add-to-cart--slideInDown .storefront-sticky-add-to-cart__content-button {
-    width: 193px;
+    /* width: 193px; */
     height: 45px;
     background: linear-gradient(92.07deg, #F96BA0 0%, #E63577 99.85%);
     box-shadow: 0px 6px 16px rgba(229, 53, 119, 0.16);
@@ -413,6 +414,7 @@ section.storefront-sticky-add-to-cart.storefront-sticky-add-to-cart--slideInDown
     font-size: 14px;
     color: #F2F2F2;
     text-align: center;
+    padding: 12px 16px;
 }
 
 /* add sosmed icon */
@@ -1036,6 +1038,129 @@ form.checkout.woocommerce-checkout .woocommerce-billing-fields__field-wrapper in
     }
 }
 
+/* =================== order received ====================== */
+
+.woocommerce-order > p.woocommerce-thankyou-order-received  {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.woocommerce-order h2 .woocommerce-notice-custom {
+    font-size: 25px;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details  {
+    margin: 32px 0;
+    background: #F2EDE7;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details:before  {
+    display: none;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details::after {
+    display: none;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details > li {
+    padding: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #242424;
+    text-transform: capitalize;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details > li strong {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.woocommerce-order > ul.woocommerce-thankyou-order-details.order_details > li {
+    padding: 16px;
+}
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li div {
+    width: 50%;
+} 
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li div p {
+    margin-bottom: 4px;
+} 
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li div p.order_detail_title_custom {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.woocommerce-order > ul.woocommerce-order-overview-custom > li.woocommerce-notice-title-custom {
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 28.5px;
+    padding-bottom: 28.5px;
+}
+
+/* ====================== My Account ====================== */
+
+.woocommerce .woocommerce-MyAccount-navigation {
+    float: left !important;
+}
+
+.woocommerce .woocommerce-MyAccount-content {
+    width : 72% !important;
+    float: right !important;
+    margin-left: 47px !important;
+    margin-right: 0 !important;
+}
+
+.woocommerce .woocommerce-MyAccount-content a.dokan-btn.dokan-btn-theme.vendor-dashboard, 
+.woocommerce .woocommerce-MyAccount-content a.woocommerce-button.button,
+.woocommerce .woocommerce-MyAccount-content button.woocommerce-Button.button {
+    background: linear-gradient(99.96deg, #FF8514 6.49%, #F9A215 92.13%);
+    box-shadow: 0px 6px 16px rgba(255, 133, 20, 0.16);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #F2F2F2; 
+    padding: 10px 16px;
+    border-width: 0;
+    text-decoration: none;
+    color : #FFFFFF !important;
+}
+
+.woocommerce .woocommerce-MyAccount-content a.woocommerce-button.button {
+    font-size: 12px;
+    padding: 7px 10px;
+   
+}
+
+nav.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link > a {
+    color : #D68605 !important;
+}
+
+.woocommerce .woocommerce-MyAccount-content a {
+    color : #D68605 !important;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .woocommerce .woocommerce-MyAccount-navigation {
+        width : 100% !important;
+    }
+    
+    .woocommerce .woocommerce-MyAccount-content {
+        width : 100% !important;
+    }
+}
+
 /* CUSTOM */
 input[type=text].wp-qurban-input,
 input[type=text]:focus.wp-qurban-input {
@@ -1049,3 +1174,4 @@ input[type=text]:focus.wp-qurban-input {
   font-weight: 500;
   font-size: 14px;
 }
+
